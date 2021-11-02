@@ -1,6 +1,6 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/unity,visualstudio,monodevelop,windows
-# Edit at https://www.toptal.com/developers/gitignore?templates=unity,visualstudio,monodevelop,windows
+# Created by https://www.toptal.com/developers/gitignore/api/unity,monodevelop,visualstudio,visualstudiocode,windows
+# Edit at https://www.toptal.com/developers/gitignore?templates=unity,monodevelop,visualstudio,visualstudiocode,windows
 
 ### MonoDevelop ###
 #User Specific
@@ -81,6 +81,25 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+# Support for Project snippet scope
+!.vscode/*.code-snippets
 
 ### Windows ###
 # Windows thumbnail cache files
@@ -468,15 +487,8 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # VS Code files for those working on multiple tools
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-*.code-workspace
 
 # Local History for Visual Studio Code
-.history/
 
 # Windows Installer files from build outputs
 
@@ -487,4 +499,4 @@ FodyWeavers.xsd
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 
-# End of https://www.toptal.com/developers/gitignore/api/unity,visualstudio,monodevelop,windows
+# End of https://www.toptal.com/developers/gitignore/api/unity,monodevelop,visualstudio,visualstudiocode,windows
