@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerMovement : MonoBehaviour
+public class playerScript : MonoBehaviour
 {
     [Header("Movement Settings")] 
        public float moveSpeed; //Sets player movement speed.
-    public Rigidbody2D playerRigidbody; 
+     Rigidbody2D playerRigidbody; 
     Vector2 movement;
     
     void Start(){
