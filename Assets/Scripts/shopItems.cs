@@ -34,15 +34,15 @@ public class shopItems : MonoBehaviour
         public static Sprite GetSprite( ItemTypes itemTypes){ //Correlates each item to a icon sprite in the shop
         switch(itemTypes){
             default:
-            case ItemTypes.ShirtNone: return gameAssets.instance.ShirtNone;
-            case ItemTypes.Shirt_1: return gameAssets.instance.Shirt_1;
-            case ItemTypes.Shirt_2: return gameAssets.instance.Shirt_2;
-            case ItemTypes.BootsNone: return gameAssets.instance.BootsNone;
-            case ItemTypes.Boots_1: return gameAssets.instance.Boots_1;
-            case ItemTypes.Boots_2: return gameAssets.instance.Boots_2;
-            case ItemTypes.HatNone: return gameAssets.instance.HatNone;
-            case ItemTypes.Hat_1: return gameAssets.instance.Hat_1;
-            case ItemTypes.Hat_2: return gameAssets.instance.Hat_2;  
+            case ItemTypes.ShirtNone: return GameAssets.i.ShirtNone;
+            case ItemTypes.Shirt_1: return GameAssets.i.Shirt_1;
+            case ItemTypes.Shirt_2: return GameAssets.i.Shirt_2;
+            case ItemTypes.BootsNone: return GameAssets.i.BootsNone;
+            case ItemTypes.Boots_1: return GameAssets.i.Boots_1;
+            case ItemTypes.Boots_2: return GameAssets.i.Boots_2;
+            case ItemTypes.HatNone: return GameAssets.i.HatNone;
+            case ItemTypes.Hat_1: return GameAssets.i.Hat_1;
+            case ItemTypes.Hat_2: return GameAssets.i.Hat_2;  
 
         }
 
