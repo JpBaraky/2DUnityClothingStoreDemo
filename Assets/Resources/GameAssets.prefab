@@ -52,4 +52,4 @@ MonoBehaviour:
   Boots_2: {fileID: 21300000, guid: 0cf0d8a437ca56645b81f71d0a128b13, type: 3}
   HatNone: {fileID: 21300000, guid: f1835ce9fd92f0a43a10d4a7b60388c0, type: 3}
   Hat_1: {fileID: 21300000, guid: f1835ce9fd92f0a43a10d4a7b60388c0, type: 3}
-  Hat_2: {fileID: 21300000, guid: f1835ce9fd92f0a43a10d4a7b60388c0, type: 3}
+  Hat_2: {fileID: 21300000, guid: 2436257913cb23e42b685915f7492a2a, type: 3}
