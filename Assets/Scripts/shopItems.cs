@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class shopItens : MonoBehaviour
+public class shopItems : MonoBehaviour
 {
-    public enum ItemTypes{ //Enumerating all of my shops itens 
+    public enum ItemTypes{ //Enumerating all of my shops items 
         ShirtNone,
         Shirt_1,
         Shirt_2,
@@ -31,18 +31,18 @@ public class shopItens : MonoBehaviour
 
         }
     }
-        public static int GetSprite( ItemTypes itemTypes){ //Correlates each item to a icon in the shop
+        public static Sprite GetSprite( ItemTypes itemTypes){ //Correlates each item to a icon sprite in the shop
         switch(itemTypes){
             default:
-            case ItemTypes.ShirtNone: return 0;
-            case ItemTypes.Shirt_1: return 0;
-            case ItemTypes.Shirt_2: return 0;
-            case ItemTypes.BootsNone: return 0;
-            case ItemTypes.Boots_1: return 0;
-            case ItemTypes.Boots_2: return 0;
-            case ItemTypes.HatNone: return 0;
-            case ItemTypes.Hat_1: return 0;
-            case ItemTypes.Hat_2: return 0;  
+            case ItemTypes.ShirtNone: return gameAssets.instance.ShirtNone;
+            case ItemTypes.Shirt_1: return gameAssets.instance.Shirt_1;
+            case ItemTypes.Shirt_2: return gameAssets.instance.Shirt_2;
+            case ItemTypes.BootsNone: return gameAssets.instance.BootsNone;
+            case ItemTypes.Boots_1: return gameAssets.instance.Boots_1;
+            case ItemTypes.Boots_2: return gameAssets.instance.Boots_2;
+            case ItemTypes.HatNone: return gameAssets.instance.HatNone;
+            case ItemTypes.Hat_1: return gameAssets.instance.Hat_1;
+            case ItemTypes.Hat_2: return gameAssets.instance.Hat_2;  
 
         }
 
