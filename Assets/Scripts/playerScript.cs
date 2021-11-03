@@ -28,5 +28,7 @@ public class playerScript : MonoBehaviour, IshopCustomerCheck
         playerRigidbody.MovePosition(playerRigidbody.position + movement * moveSpeed * Time.fixedDeltaTime); //Movement in Fixed Update for better consistence no matter the fps.
 
     }
-    //void IshopCustomerCheck(shopItems.ItemTypes)
+    public void BougthItem(shopItems.ItemTypes itemTypes){ //Verify who is accessing the shop and what item hes bought
+        Debug.Log("Bought Item: " + itemTypes );
+    }
 }

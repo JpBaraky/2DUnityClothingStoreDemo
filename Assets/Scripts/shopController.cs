@@ -9,23 +9,24 @@ public class shopController : MonoBehaviour
   
     private Transform containerStore;
     private Transform storeButtonTemplate;
-    private Image containerImage;
+   
     private Button buyButton;
     private IshopCustomerCheck shopCustomerCheck;
     void Awake()
     {
         containerStore = transform.Find("ContainerStore"); //Finds and puts the Container Store of the UI in a variable
-        containerImage = containerStore.GetComponent<Image>();
+      
         storeButtonTemplate = containerStore.Find("StoreButtonTemplate");//Finds inside the container and puts the template for the button in a variable.
         storeButtonTemplate.gameObject.SetActive(false); //Starting with the template hidden, he stays hidden because he is there just to be cloned
-        containerImage.enabled = false; //The container starts hidden too, but turn on when is needed
+       
 
     }
     private void Start(){
-        containerImage.enabled = true;
+        
         CreateStoreButton(shopItems.ItemTypes.Boots_1, shopItems.GetSprite(shopItems.ItemTypes.Boots_1),  shopItems.GetCost(shopItems.ItemTypes.Boots_1), -1);
         CreateStoreButton(shopItems.ItemTypes.Hat_2, shopItems.GetSprite(shopItems.ItemTypes.Hat_2),  shopItems.GetCost(shopItems.ItemTypes.Hat_2), 0);
         CreateStoreButton(shopItems.ItemTypes.Shirt_1, shopItems.GetSprite(shopItems.ItemTypes.Shirt_1),  shopItems.GetCost(shopItems.ItemTypes.Shirt_1), 1);
+        HideShop();
            }
     
 
@@ -49,13 +50,23 @@ public class shopController : MonoBehaviour
             
        }
          public void TryBuyItem(shopItems.ItemTypes itemType, int itemCost){
-             Debug.Log(itemType+" "+-itemCost+" Gold");
+             
              shopCustomerCheck.BougthItem(itemType);
         } 
 
-        
-        
+        //## Show or Hide the shop when needed
+        public void ShowShop(IshopCustomerCheck shopCustomerCheck){ 
+            this.shopCustomerCheck = shopCustomerCheck;
+            
+            gameObject.SetActive(true);
 
-                  
+        }
+        
+        public void HideShop(){
+           Debug.Log("Shop Hidden");
+            gameObject.SetActive(false);
+             
+        }
+        //##          
        }
 
