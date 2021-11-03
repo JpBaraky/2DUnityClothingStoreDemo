@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class playerScript : MonoBehaviour, IshopCustomerCheck
 {
+    private gameController gameController;
+    private equipItens equipItens;
     [Header("Movement Settings")]
     public float moveSpeed; //Sets player movement speed.
     Rigidbody2D playerRigidbody;
@@ -11,6 +13,8 @@ public class playerScript : MonoBehaviour, IshopCustomerCheck
 
     void Start()
     {
+        gameController = FindObjectOfType(typeof(gameController)) as gameController;
+        equipItens = FindObjectOfType(typeof(equipItens)) as equipItens;
         playerRigidbody = GetComponent<Rigidbody2D>();//Sets player rigidbody automatic 
     }
     void Update()
@@ -29,6 +33,19 @@ public class playerScript : MonoBehaviour, IshopCustomerCheck
 
     }
     public void BougthItem(shopItems.ItemTypes itemTypes){ //Verify who is accessing the shop and what item hes bought
+        
         Debug.Log("Bought Item: " + itemTypes );
     }
+
+    public bool TrySpendGold(int goldAmount) //Verify if the player have the gold necessary to buy a item.
+    {
+       if(gameController.playerGold >= goldAmount){
+           gameController.playerGold -= goldAmount;
+           return true;
+       }
+       else{
+           return false;
+       }
+    }
+    
 }

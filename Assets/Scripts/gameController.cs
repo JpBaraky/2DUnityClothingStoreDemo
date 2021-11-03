@@ -14,7 +14,7 @@ public class gameController : MonoBehaviour
     void Start()
     {
         playerScript = FindObjectOfType(typeof(playerScript)) as playerScript; //Gets the player script and put in a variable
-        playerGold += 150;
+        playerGold += 50;
 
     }
 

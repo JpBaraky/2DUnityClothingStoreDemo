@@ -44,14 +44,16 @@ public class shopController : MonoBehaviour
         shopItemTransform.Find("Store Item").GetComponent<Image>().sprite = itemSprite;
 
         buyButton = shopItemTransform.GetComponent<Button>(); 
-        buyButton.onClick.AddListener(delegate {TryBuyItem(itemType, itemCost); }); //Geting the click on the shop button 
+        buyButton.onClick.AddListener(delegate {TryBuyItem(itemType); }); //Geting the click on the shop button 
 
             
             
        }
-         public void TryBuyItem(shopItems.ItemTypes itemType, int itemCost){
-             
+         public void TryBuyItem(shopItems.ItemTypes itemType){
+            if( shopCustomerCheck.TrySpendGold(shopItems.GetCost(itemType))){ //Verify if the player can afford the item 
              shopCustomerCheck.BougthItem(itemType);
+            }
+            
         } 
 
         //## Show or Hide the shop when needed
@@ -63,7 +65,7 @@ public class shopController : MonoBehaviour
         }
         
         public void HideShop(){
-           Debug.Log("Shop Hidden");
+           
             gameObject.SetActive(false);
              
         }
