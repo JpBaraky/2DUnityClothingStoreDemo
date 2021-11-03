@@ -35,6 +35,17 @@ public class playerScript : MonoBehaviour, IshopCustomerCheck
     public void BougthItem(shopItems.ItemTypes itemTypes){ //Verify who is accessing the shop and what item hes bought
         
         Debug.Log("Bought Item: " + itemTypes );
+       /* switch(itemTypes){ //Each bought item will call a different function and equip it to the player
+            case shopItems.ItemTypes.ShirtNone: equipItens.EquipShirtNone(); break;
+            case shopItems.ItemTypes.Shirt_1: equipItens.EquipShirt1(); break;
+            case shopItems.ItemTypes.Shirt_2: equipItens.EquipShirt2(); break;
+            case shopItems.ItemTypes.BootsNone: equipItens.EquipBootsNone(); break;
+            case shopItems.ItemTypes.Boots_1: equipItens.EquipBoots1(); break;
+            case shopItems.ItemTypes.Boots_2: equipItens.EquipBoots2(); break;
+            case shopItems.ItemTypes.HatNone: equipItens.EquipHatNone(); break;
+            case shopItems.ItemTypes.Hat_1: equipItens.EquipHat1(); break;
+            case shopItems.ItemTypes.Hat_2: equipItens.EquipHat2(); break;
+        } */
     }
 
     public bool TrySpendGold(int goldAmount) //Verify if the player have the gold necessary to buy a item.
