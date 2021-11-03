@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class GameAssets : MonoBehaviour
+public class gameAssets : MonoBehaviour
 {
-    private static GameAssets _i;
+    private static gameAssets _i;
 
-    public static GameAssets i {
-        get {
-            if (_i == null) _i = Instantiate(Resources.Load<GameAssets>("GameAssets"));
+
+    public static gameAssets i
+    {
+        get
+        {
+            if (_i == null) _i = Instantiate(Resources.Load<gameAssets>("gameAssets"));
             return _i;
         }
     }
-      
-//## All sprites inside a Object
+    [Header("List of Items in the Store")]
+    //## All sprites inside a Object
     public Sprite ShirtNone;
     public Sprite Shirt_1;
     public Sprite Shirt_2;
@@ -24,5 +27,5 @@ public class GameAssets : MonoBehaviour
     public Sprite HatNone;
     public Sprite Hat_1;
     public Sprite Hat_2;
-//##
+    //##
 }

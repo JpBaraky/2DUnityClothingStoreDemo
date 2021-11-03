@@ -11,6 +11,7 @@ public class shopController : MonoBehaviour
     private Transform storeButtonTemplate;
     private Image containerImage;
     private Button buyButton;
+    private IshopCustomerCheck shopCustomerCheck;
     void Awake()
     {
         containerStore = transform.Find("ContainerStore"); //Finds and puts the Container Store of the UI in a variable
@@ -21,6 +22,7 @@ public class shopController : MonoBehaviour
 
     }
     private void Start(){
+        containerImage.enabled = true;
         CreateStoreButton(shopItems.ItemTypes.Boots_1, shopItems.GetSprite(shopItems.ItemTypes.Boots_1),  shopItems.GetCost(shopItems.ItemTypes.Boots_1), -1);
         CreateStoreButton(shopItems.ItemTypes.Hat_2, shopItems.GetSprite(shopItems.ItemTypes.Hat_2),  shopItems.GetCost(shopItems.ItemTypes.Hat_2), 0);
         CreateStoreButton(shopItems.ItemTypes.Shirt_1, shopItems.GetSprite(shopItems.ItemTypes.Shirt_1),  shopItems.GetCost(shopItems.ItemTypes.Shirt_1), 1);
@@ -40,19 +42,19 @@ public class shopController : MonoBehaviour
 
         shopItemTransform.Find("Store Item").GetComponent<Image>().sprite = itemSprite;
 
-        buyButton = shopItemTransform.GetComponent<Button>();
-        buyButton.onClick.AddListener(delegate {TryBuyItem(itemType); });
+        buyButton = shopItemTransform.GetComponent<Button>(); 
+        buyButton.onClick.AddListener(delegate {TryBuyItem(itemType, itemCost); }); //Geting the click on the shop button 
 
             
             
        }
-         public void TryBuyItem(shopItems.ItemTypes itemType){
-             Debug.Log(itemType);
-
+         public void TryBuyItem(shopItems.ItemTypes itemType, int itemCost){
+             Debug.Log(itemType+" "+-itemCost+" Gold");
+             shopCustomerCheck.BougthItem(itemType);
         } 
 
         
-         //Geting the click on the shop button 
+        
 
                   
        }

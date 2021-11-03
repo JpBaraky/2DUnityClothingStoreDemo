@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class shopItems : MonoBehaviour
 {
-    public enum ItemTypes{ //Enumerating all of my shops items 
+    public enum ItemTypes
+    { //Enumerating all of my shops items 
         ShirtNone,
         Shirt_1,
         Shirt_2,
@@ -15,8 +16,10 @@ public class shopItems : MonoBehaviour
         Hat_1,
         Hat_2
     }
-    public static int GetCost( ItemTypes itemTypes ){ //Correlates each item to a price
-        switch(itemTypes){
+    public static int GetCost(ItemTypes itemTypes)
+    { //Correlates each item to a price
+        switch (itemTypes)
+        {
             default:
             case ItemTypes.ShirtNone: return 0;
             case ItemTypes.Shirt_1: return 25;
@@ -26,23 +29,25 @@ public class shopItems : MonoBehaviour
             case ItemTypes.Boots_2: return 150;
             case ItemTypes.HatNone: return 0;
             case ItemTypes.Hat_1: return 30;
-            case ItemTypes.Hat_2: return 90;           
-            
+            case ItemTypes.Hat_2: return 90;
+
 
         }
     }
-        public static Sprite GetSprite( ItemTypes itemTypes){ //Correlates each item to a icon sprite in the shop
-        switch(itemTypes){
+    public static Sprite GetSprite(ItemTypes itemTypes)
+    { //Correlates each item to a icon sprite in the shop
+        switch (itemTypes)
+        {
             default:
-            case ItemTypes.ShirtNone: return GameAssets.i.ShirtNone;
-            case ItemTypes.Shirt_1: return GameAssets.i.Shirt_1;
-            case ItemTypes.Shirt_2: return GameAssets.i.Shirt_2;
-            case ItemTypes.BootsNone: return GameAssets.i.BootsNone;
-            case ItemTypes.Boots_1: return GameAssets.i.Boots_1;
-            case ItemTypes.Boots_2: return GameAssets.i.Boots_2;
-            case ItemTypes.HatNone: return GameAssets.i.HatNone;
-            case ItemTypes.Hat_1: return GameAssets.i.Hat_1;
-            case ItemTypes.Hat_2: return GameAssets.i.Hat_2;  
+            case ItemTypes.ShirtNone: return gameAssets.i.ShirtNone;
+            case ItemTypes.Shirt_1: return gameAssets.i.Shirt_1;
+            case ItemTypes.Shirt_2: return gameAssets.i.Shirt_2;
+            case ItemTypes.BootsNone: return gameAssets.i.BootsNone;
+            case ItemTypes.Boots_1: return gameAssets.i.Boots_1;
+            case ItemTypes.Boots_2: return gameAssets.i.Boots_2;
+            case ItemTypes.HatNone: return gameAssets.i.HatNone;
+            case ItemTypes.Hat_1: return gameAssets.i.Hat_1;
+            case ItemTypes.Hat_2: return gameAssets.i.Hat_2;
 
         }
 
