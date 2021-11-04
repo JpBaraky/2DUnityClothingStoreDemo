@@ -21,11 +21,14 @@ public class gameAssets : MonoBehaviour
     public Sprite ShirtNone;
     public Sprite Shirt_1;
     public Sprite Shirt_2;
+    public Sprite Shirt_3;
     public Sprite BootsNone;
     public Sprite Boots_1;
     public Sprite Boots_2;
+    public Sprite Boots_3;
     public Sprite HatNone;
     public Sprite Hat_1;
     public Sprite Hat_2;
+    public Sprite Hat_3;
     //##
 }

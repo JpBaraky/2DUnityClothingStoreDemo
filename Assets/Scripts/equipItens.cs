@@ -5,9 +5,12 @@ using UnityEngine;
 public class equipItens : MonoBehaviour
 {
     private playerScript playerScript;
-    public SpriteRenderer[] playerShirt;
-    public SpriteRenderer[] playerBoots;
-    public SpriteRenderer[] playerHat;
+     [Header("Renderer and Sprites")]
+    public SpriteRenderer[] playerCloths; 
+    public Sprite[] playerBoots;
+    public Sprite[] playerShirt;
+   
+    public Sprite[] playerHat;
 
 
     void Start(){
@@ -19,7 +22,7 @@ public class equipItens : MonoBehaviour
 
     }
     public void EquipShirt1(){
-        
+        playerCloths[0].sprite = playerShirt[1];
     }
     public void EquipShirt2(){
 

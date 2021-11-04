@@ -44,12 +44,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b428286b309e77d409eb77843b514758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShirtNone: {fileID: 21300000, guid: 789d8c93d7494434b864457031c30e1f, type: 3}
+  ShirtNone: {fileID: 0}
   Shirt_1: {fileID: 21300000, guid: 789d8c93d7494434b864457031c30e1f, type: 3}
-  Shirt_2: {fileID: 21300000, guid: 789d8c93d7494434b864457031c30e1f, type: 3}
-  BootsNone: {fileID: 21300000, guid: 0cf0d8a437ca56645b81f71d0a128b13, type: 3}
+  Shirt_2: {fileID: 21300000, guid: 00892d5566f43de43b4af752e82e42b2, type: 3}
+  Shirt_3: {fileID: 21300000, guid: 7866a89316645c049b6ad718293c8723, type: 3}
+  BootsNone: {fileID: 0}
   Boots_1: {fileID: 21300000, guid: 0cf0d8a437ca56645b81f71d0a128b13, type: 3}
-  Boots_2: {fileID: 21300000, guid: 0cf0d8a437ca56645b81f71d0a128b13, type: 3}
-  HatNone: {fileID: 21300000, guid: f1835ce9fd92f0a43a10d4a7b60388c0, type: 3}
+  Boots_2: {fileID: 21300000, guid: dd58addceec34f349860d5797188da79, type: 3}
+  Boots_3: {fileID: 21300000, guid: 768c297edbdfb7f4e834a9b718fd01eb, type: 3}
+  HatNone: {fileID: 0}
   Hat_1: {fileID: 21300000, guid: f1835ce9fd92f0a43a10d4a7b60388c0, type: 3}
   Hat_2: {fileID: 21300000, guid: 2436257913cb23e42b685915f7492a2a, type: 3}
+  Hat_3: {fileID: 21300000, guid: 5df394b97737e6c44b743fa7a9e63c94, type: 3}
