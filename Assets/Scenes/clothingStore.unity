@@ -1843,7 +1843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2848e30acfcea134e9cb9dce400c2aa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerGold: 150
+  playerGold: 1000
   goldTxt: {fileID: 8251275167281229546}
 --- !u!4 &747381371
 Transform:

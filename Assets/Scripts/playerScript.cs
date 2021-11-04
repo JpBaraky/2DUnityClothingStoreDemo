@@ -36,17 +36,22 @@ public class playerScript : MonoBehaviour, IshopCustomerCheck
     { //Verify who is accessing the shop and what item hes bought
 
         Debug.Log("Bought Item: " + itemTypes);
-        /* switch(itemTypes){ //Each bought item will call a different function and equip it to the player
-             case shopItems.ItemTypes.ShirtNone: equipItens.EquipShirtNone(); break;
-             case shopItems.ItemTypes.Shirt_1: equipItens.EquipShirt1(); break;
-             case shopItems.ItemTypes.Shirt_2: equipItens.EquipShirt2(); break;
-             case shopItems.ItemTypes.BootsNone: equipItens.EquipBootsNone(); break;
-             case shopItems.ItemTypes.Boots_1: equipItens.EquipBoots1(); break;
-             case shopItems.ItemTypes.Boots_2: equipItens.EquipBoots2(); break;
-             case shopItems.ItemTypes.HatNone: equipItens.EquipHatNone(); break;
-             case shopItems.ItemTypes.Hat_1: equipItens.EquipHat1(); break;
-             case shopItems.ItemTypes.Hat_2: equipItens.EquipHat2(); break;
-         } */
+         switch(itemTypes){ //Each bought item will call a different function and equip it to the player    
+             case shopItems.ItemTypes.BootsNone: equipItens.EquipItem(0, 0); break;
+             case shopItems.ItemTypes.Boots_1: equipItens.EquipItem(0, 1); break;
+             case shopItems.ItemTypes.Boots_2: equipItens.EquipItem(0, 2); break;
+             case shopItems.ItemTypes.Boots_3: equipItens.EquipItem(0, 3); break;
+
+             case shopItems.ItemTypes.ShirtNone: equipItens.EquipItem(1, 0); break;
+             case shopItems.ItemTypes.Shirt_1: equipItens.EquipItem(1, 1); break;
+             case shopItems.ItemTypes.Shirt_2: equipItens.EquipItem(1, 2); break;
+             case shopItems.ItemTypes.Shirt_3: equipItens.EquipItem(1, 3); break;
+
+             case shopItems.ItemTypes.HatNone: equipItens.EquipItem(2, 0); break;
+             case shopItems.ItemTypes.Hat_1: equipItens.EquipItem(2, 1); break;
+             case shopItems.ItemTypes.Hat_2: equipItens.EquipItem(2, 2); break;
+             case shopItems.ItemTypes.Hat_3: equipItens.EquipItem(2, 3); break;
+         } 
     }
     public bool TrySpendGold(int goldAmount) //Verify if the player have the gold necessary to buy a item.
     {
