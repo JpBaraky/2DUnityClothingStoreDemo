@@ -25,21 +25,22 @@ public class shopController : MonoBehaviour
     }
     private void Start(){
         //This is not a good way to put items in the shop, but just for a few is fine
-        CreateStoreButton(shopItems.ItemTypes.Boots_1, shopItems.GetSprite(shopItems.ItemTypes.Boots_1),  shopItems.GetCost(shopItems.ItemTypes.Boots_1), -1, 5);
-        CreateStoreButton(shopItems.ItemTypes.Hat_2, shopItems.GetSprite(shopItems.ItemTypes.Hat_2),  shopItems.GetCost(shopItems.ItemTypes.Hat_2), 0, 9);
-        CreateStoreButton(shopItems.ItemTypes.Shirt_1, shopItems.GetSprite(shopItems.ItemTypes.Shirt_1),  shopItems.GetCost(shopItems.ItemTypes.Shirt_1), 1, 2);
-    
+        CreateStoreButton(shopItems.ItemTypes.Boots_1, shopItems.GetSprite(shopItems.ItemTypes.Boots_1),  shopItems.GetCost(shopItems.ItemTypes.Boots_1), 5);
+        CreateStoreButton(shopItems.ItemTypes.Hat_2, shopItems.GetSprite(shopItems.ItemTypes.Hat_2),  shopItems.GetCost(shopItems.ItemTypes.Hat_2), 9);
+        CreateStoreButton(shopItems.ItemTypes.Shirt_1, shopItems.GetSprite(shopItems.ItemTypes.Shirt_1),  shopItems.GetCost(shopItems.ItemTypes.Shirt_1),  2);
+        CreateStoreButton(shopItems.ItemTypes.Boots_1, shopItems.GetSprite(shopItems.ItemTypes.Boots_1),  shopItems.GetCost(shopItems.ItemTypes.Boots_1),  5);
+        CreateStoreButton(shopItems.ItemTypes.Boots_1, shopItems.GetSprite(shopItems.ItemTypes.Boots_1),  shopItems.GetCost(shopItems.ItemTypes.Boots_1),  5);
+        CreateStoreButton(shopItems.ItemTypes.Boots_1, shopItems.GetSprite(shopItems.ItemTypes.Boots_1),  shopItems.GetCost(shopItems.ItemTypes.Boots_1),  5);
         HideShop();
            }
     
 
-       private void CreateStoreButton(shopItems.ItemTypes itemType, Sprite itemSprite, int itemCost, int positionIndex, int itemNumber){ //Name, cost, sprite and position of each shop button.
+       private void CreateStoreButton(shopItems.ItemTypes itemType, Sprite itemSprite, int itemCost, int itemNumber){ //Name, cost, sprite and position of each shop button.
            Transform shopItemTransform = Instantiate(storeButtonTemplate, containerStore);
         shopItemTransform.gameObject.SetActive(true);
         RectTransform shopItemRectTransform = shopItemTransform.GetComponent<RectTransform>();
 
-        float shopItemHeight = 250f; // Distance between the buttons of the shop
-        shopItemRectTransform.anchoredPosition = new Vector2(0, -shopItemHeight * positionIndex);
+     
 
         
         shopItemTransform.Find("Item Price").GetComponent<TextMeshProUGUI>().SetText(itemCost.ToString());

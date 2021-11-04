@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class equipItens : MonoBehaviour
 {
+    private playerScript playerScript;
+    public SpriteRenderer[] playerShirt;
+    public SpriteRenderer[] playerBoots;
+    public SpriteRenderer[] playerHat;
+
+
+    void Start(){
+         playerScript = FindObjectOfType(typeof(playerScript)) as playerScript;
+    }
     //All functions to equip the player with the itens he bought
     public void EquipShirtNone(){
 
+
     }
     public void EquipShirt1(){
-
+        
     }
     public void EquipShirt2(){
 
