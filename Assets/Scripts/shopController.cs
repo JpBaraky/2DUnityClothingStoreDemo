@@ -7,6 +7,7 @@ using TMPro;
 public class shopController : MonoBehaviour
 {
 
+
     private Transform containerStore;
     private Transform storeButtonTemplate;
 
@@ -27,22 +28,29 @@ public class shopController : MonoBehaviour
     private void Start()
     {
         //This is not a good way to put items in the shop, but just for a few is fine
-        CreateStoreButton(shopItems.ItemTypes.Boots_1, shopItems.GetSprite(shopItems.ItemTypes.Boots_1), shopItems.GetCost(shopItems.ItemTypes.Boots_1), 1);
-        CreateStoreButton(shopItems.ItemTypes.Shirt_1, shopItems.GetSprite(shopItems.ItemTypes.Shirt_1), shopItems.GetCost(shopItems.ItemTypes.Shirt_1), 2);
-        CreateStoreButton(shopItems.ItemTypes.Hat_1, shopItems.GetSprite(shopItems.ItemTypes.Hat_1), shopItems.GetCost(shopItems.ItemTypes.Hat_1), 3);
-        CreateStoreButton(shopItems.ItemTypes.Boots_2, shopItems.GetSprite(shopItems.ItemTypes.Boots_2), shopItems.GetCost(shopItems.ItemTypes.Boots_2), 4);
-        CreateStoreButton(shopItems.ItemTypes.Shirt_2, shopItems.GetSprite(shopItems.ItemTypes.Shirt_2), shopItems.GetCost(shopItems.ItemTypes.Shirt_2), 5);
-        CreateStoreButton(shopItems.ItemTypes.Hat_2, shopItems.GetSprite(shopItems.ItemTypes.Hat_2), shopItems.GetCost(shopItems.ItemTypes.Hat_2), 6);
-        CreateStoreButton(shopItems.ItemTypes.Boots_3, shopItems.GetSprite(shopItems.ItemTypes.Boots_3), shopItems.GetCost(shopItems.ItemTypes.Boots_3), 7);
-        CreateStoreButton(shopItems.ItemTypes.Shirt_3, shopItems.GetSprite(shopItems.ItemTypes.Shirt_3), shopItems.GetCost(shopItems.ItemTypes.Shirt_3), 8);
-        CreateStoreButton(shopItems.ItemTypes.Hat_3, shopItems.GetSprite(shopItems.ItemTypes.Hat_3), shopItems.GetCost(shopItems.ItemTypes.Hat_3), 9);
+        
+        CreateStoreButton(shopItems.ItemTypes.Boots_1, shopItems.GetSprite(shopItems.ItemTypes.Boots_1), shopItems.GetCost(shopItems.ItemTypes.Boots_1));
+        CreateStoreButton(shopItems.ItemTypes.Shirt_1, shopItems.GetSprite(shopItems.ItemTypes.Shirt_1), shopItems.GetCost(shopItems.ItemTypes.Shirt_1));
+        CreateStoreButton(shopItems.ItemTypes.Hat_1, shopItems.GetSprite(shopItems.ItemTypes.Hat_1), shopItems.GetCost(shopItems.ItemTypes.Hat_1));
+        CreateStoreButton(shopItems.ItemTypes.Boots_2, shopItems.GetSprite(shopItems.ItemTypes.Boots_2), shopItems.GetCost(shopItems.ItemTypes.Boots_2));
+        CreateStoreButton(shopItems.ItemTypes.Shirt_2, shopItems.GetSprite(shopItems.ItemTypes.Shirt_2), shopItems.GetCost(shopItems.ItemTypes.Shirt_2));
+        CreateStoreButton(shopItems.ItemTypes.Hat_2, shopItems.GetSprite(shopItems.ItemTypes.Hat_2), shopItems.GetCost(shopItems.ItemTypes.Hat_2));
+        CreateStoreButton(shopItems.ItemTypes.Boots_3, shopItems.GetSprite(shopItems.ItemTypes.Boots_3), shopItems.GetCost(shopItems.ItemTypes.Boots_3));
+        CreateStoreButton(shopItems.ItemTypes.Shirt_3, shopItems.GetSprite(shopItems.ItemTypes.Shirt_3), shopItems.GetCost(shopItems.ItemTypes.Shirt_3));
+        CreateStoreButton(shopItems.ItemTypes.Hat_3, shopItems.GetSprite(shopItems.ItemTypes.Hat_3), shopItems.GetCost(shopItems.ItemTypes.Hat_3));
+        
+        
 
+        
 
         HideShop();
     }
+    private void Update(){
+
+    }
 
 
-    private void CreateStoreButton(shopItems.ItemTypes itemType, Sprite itemSprite, int itemCost, int itemNumber)
+    private void CreateStoreButton(shopItems.ItemTypes itemType, Sprite itemSprite, int itemCost)
     { //Name, cost, sprite and position of each shop button.
         Transform shopItemTransform = Instantiate(storeButtonTemplate, containerStore);
         shopItemTransform.gameObject.SetActive(true);
@@ -83,9 +91,11 @@ public class shopController : MonoBehaviour
 
 
     }
-    public void TrySellItem(shopItems.ItemTypes itemType)
+    public void TrySellItem(shopItems.ItemTypes itemType) //Verify if the player has the item hes trying to sell
     {
-        if (shopCustomerCheck.TrySellItem(shopItems.GetCost(itemType)))
+    
+        if (shopCustomerCheck.TrySellItem(shopItems.GetCost(itemType), shopItems.GetItemCode(itemType)))
+
             shopCustomerCheck.SellItem(itemType);
     }
 

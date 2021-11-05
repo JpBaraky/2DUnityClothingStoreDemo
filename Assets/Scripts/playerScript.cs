@@ -6,6 +6,9 @@ public class playerScript : MonoBehaviour, IshopCustomerCheck
 {
     private gameController gameController;
     private equipItens equipItens;
+    [Header("Player Equipped Items")]
+
+    public int[] playerCurrentItensCodes;
     [Header("Movement Settings")]
     public float moveSpeed; //Sets player movement speed.
     Rigidbody2D playerRigidbody;
@@ -36,22 +39,23 @@ public class playerScript : MonoBehaviour, IshopCustomerCheck
     { //Verify who is accessing the shop and what item hes bought
 
         Debug.Log("Bought Item: " + itemTypes);
-         switch(itemTypes){ //Each bought item will call a different function and equip it to the player    
-             case shopItems.ItemTypes.BootsNone: equipItens.EquipItem(0, 0); break;
-             case shopItems.ItemTypes.Boots_1: equipItens.EquipItem(0, 1); break;
-             case shopItems.ItemTypes.Boots_2: equipItens.EquipItem(0, 2); break;
-             case shopItems.ItemTypes.Boots_3: equipItens.EquipItem(0, 3); break;
+        switch (itemTypes)
+        { //Each bought item will call a different function and equip it to the player    
+            case shopItems.ItemTypes.BootsNone: equipItens.EquipItem(0, 0); break;
+            case shopItems.ItemTypes.Boots_1: equipItens.EquipItem(0, 1); break;
+            case shopItems.ItemTypes.Boots_2: equipItens.EquipItem(0, 2); break;
+            case shopItems.ItemTypes.Boots_3: equipItens.EquipItem(0, 3); break;
 
-             case shopItems.ItemTypes.ShirtNone: equipItens.EquipItem(1, 0); break;
-             case shopItems.ItemTypes.Shirt_1: equipItens.EquipItem(1, 1); break;
-             case shopItems.ItemTypes.Shirt_2: equipItens.EquipItem(1, 2); break;
-             case shopItems.ItemTypes.Shirt_3: equipItens.EquipItem(1, 3); break;
+            case shopItems.ItemTypes.ShirtNone: equipItens.EquipItem(1, 0); break;
+            case shopItems.ItemTypes.Shirt_1: equipItens.EquipItem(1, 1); break;
+            case shopItems.ItemTypes.Shirt_2: equipItens.EquipItem(1, 2); break;
+            case shopItems.ItemTypes.Shirt_3: equipItens.EquipItem(1, 3); break;
 
-             case shopItems.ItemTypes.HatNone: equipItens.EquipItem(2, 0); break;
-             case shopItems.ItemTypes.Hat_1: equipItens.EquipItem(2, 1); break;
-             case shopItems.ItemTypes.Hat_2: equipItens.EquipItem(2, 2); break;
-             case shopItems.ItemTypes.Hat_3: equipItens.EquipItem(2, 3); break;
-         } 
+            case shopItems.ItemTypes.HatNone: equipItens.EquipItem(2, 0); break;
+            case shopItems.ItemTypes.Hat_1: equipItens.EquipItem(2, 1); break;
+            case shopItems.ItemTypes.Hat_2: equipItens.EquipItem(2, 2); break;
+            case shopItems.ItemTypes.Hat_3: equipItens.EquipItem(2, 3); break;
+        }
     }
     public bool TrySpendGold(int goldAmount) //Verify if the player have the gold necessary to buy a item.
     {
@@ -67,57 +71,60 @@ public class playerScript : MonoBehaviour, IshopCustomerCheck
         }
     }
 
-     public void SellItem(shopItems.ItemTypes itemTypes) 
+    public void SellItem(shopItems.ItemTypes itemTypes)
     {
         Debug.Log("Selled Item: " + itemTypes);
         switch (itemTypes)
-        { //Each sell item will call a different function  it to the player
-            case shopItems.ItemTypes.Shirt_1:
-                {
-                   // equipItens.EquipShirtNone();
-                    
-                    break;
-                }
-            case shopItems.ItemTypes.Shirt_2:
-                {
-                    //equipItens.EquipShirtNone();
-                     break;
-                }
-            case shopItems.ItemTypes.Boots_1:
-                {
-                   // equipItens.EquipBootsNone(); 
-                    break;
-                }
-            case shopItems.ItemTypes.Boots_2:
-                {
-                    //equipItens.EquipBootsNone();
-                    
-                    break;
-                }
-            case shopItems.ItemTypes.Hat_1:
-                {
-                    //equipItens.EquipHatNone(); 
-                    break;
-                }
-            case shopItems.ItemTypes.Hat_2:
-                {
-                    //equipItens.EquipHatNone(); 
-                    break;
-                }
-
+        { 
+            case shopItems.ItemTypes.BootsNone: equipItens.EquipItem(0, 0); break;
+            case shopItems.ItemTypes.ShirtNone: equipItens.EquipItem(1, 0); break;
+            case shopItems.ItemTypes.HatNone: equipItens.EquipItem(2, 0); break;
         }
 
 
     }
 
-    
 
-    public bool TrySellItem(int goldAmount)
+
+    public bool TrySellItem(int goldAmount, int GetItemCode)
     {
+        Debug.Log("item code"+ GetItemCode +"current item " + playerCurrentItensCodes[0]);
         
-        gameController.playerGold += goldAmount;
-        return true;
+          
+            if (playerCurrentItensCodes[0] == GetItemCode)
+            {
+                
+                gameController.playerGold += goldAmount;
+                playerCurrentItensCodes[0] = 0;
+               equipItens.EquipItem(0, 0);
+                return true;
+            } 
+            if (playerCurrentItensCodes[1] == GetItemCode)
+            {
+                
+                gameController.playerGold += goldAmount;
+                playerCurrentItensCodes[1] = 0;
+               equipItens.EquipItem(1, 0);
+                return true;
+            } 
+            if (playerCurrentItensCodes[2] == GetItemCode)
+            {
+                
+                gameController.playerGold += goldAmount;
+                playerCurrentItensCodes[2] = 0;
+               equipItens.EquipItem(2, 0);
+                return true;
+            } 
+
         
+      
+        return false;
+
+
+
+
 
     }
+
+
 }
