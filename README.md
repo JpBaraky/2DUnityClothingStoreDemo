@@ -3,7 +3,7 @@
 
 
 
-<img src:"https://img.itch.zone/aW1hZ2UvMTI2NTY2NS83MzcyNTg0LnBuZw==/original/PUyEtY.png">
+![alt text](https://github.com/JpBaraky/2DUnityClothingStoreDemo/blob/main/game.png?raw=true)
 <p>This prototype was made for job applying purposes.
 </p>
 <h3>Controls</h3>
