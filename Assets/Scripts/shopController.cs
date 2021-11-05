@@ -95,7 +95,7 @@ public class shopController : MonoBehaviour
     {
     
         if (shopCustomerCheck.TrySellItem(shopItems.GetCost(itemType), shopItems.GetItemCode(itemType)))
-
+    
             shopCustomerCheck.SellItem(itemType);
     }
 
@@ -112,6 +112,7 @@ public class shopController : MonoBehaviour
     {
 
         gameObject.SetActive(false);
+        
 
     }
     //##          

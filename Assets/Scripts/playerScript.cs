@@ -38,7 +38,7 @@ public class playerScript : MonoBehaviour, IshopCustomerCheck
     public void BougthItem(shopItems.ItemTypes itemTypes)
     { //Verify who is accessing the shop and what item hes bought
 
-        Debug.Log("Bought Item: " + itemTypes);
+        
         switch (itemTypes)
         { //Each bought item will call a different function and equip it to the player    
             case shopItems.ItemTypes.BootsNone: equipItens.EquipItem(0, 0); break;
@@ -73,7 +73,7 @@ public class playerScript : MonoBehaviour, IshopCustomerCheck
 
     public void SellItem(shopItems.ItemTypes itemTypes)
     {
-        Debug.Log("Selled Item: " + itemTypes);
+        
         switch (itemTypes)
         { 
             case shopItems.ItemTypes.BootsNone: equipItens.EquipItem(0, 0); break;
@@ -88,7 +88,7 @@ public class playerScript : MonoBehaviour, IshopCustomerCheck
 
     public bool TrySellItem(int goldAmount, int GetItemCode)
     {
-        Debug.Log("item code"+ GetItemCode +"current item " + playerCurrentItensCodes[0]);
+      
         
           
             if (playerCurrentItensCodes[0] == GetItemCode)

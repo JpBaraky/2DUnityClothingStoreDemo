@@ -13,6 +13,9 @@ public class shopTriggerCollider : MonoBehaviour
       
       if(shopCustomerCheck != null){
           uiShopBuy.ShowShop(shopCustomerCheck);
+          uiShopSell.ShowShop(shopCustomerCheck);
+          uiShopSell.HideShop();
+
       }
 
   } 
