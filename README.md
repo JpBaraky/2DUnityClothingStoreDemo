@@ -1,18 +1,16 @@
-<p></p>
-<h1>Unity3D Night and Day Cycle</h1>
-<p>This is a personal non-monetary project with study purposes. Open Source, feel free to ask anything or use any code. What as the days pass and your mind go with it. Take some time to meditate and relax.
+<p><br></p>
+<h1>2DUnityClothingStoreDemo</h1>
+
+
+
+![alt text](https://github.com/JpBaraky/2DUnityClothingStoreDemo/blob/main/game.png?raw=true)
+<p>This prototype was made for job applying purposes.
 </p>
-<h3>Download Instructions</h3>
-<p>-Download the .zip of all files on GitHub</p>
-<p>-Create a new project on Unity</p>
-<p>-Copy all files to the new project and open</p>
+<h3>Controls</h3>
+<p>Control the player with WASD or the Arrow keys, on the shop you can use the mouse to click on each of the items to buy, it will automatically equip and trown away your current item.</p>
+<p>On the sell Tab you can only sell the items you have equipped on the moment. </p>
 <h3>Software</h3>
-<p>Made with Unity3D 2022.1.0a13 Scripts made with C#
-</p>
-<p>To acess the project and support me feel free to&nbsp;access:
-</p>
-<p>&nbsp;<a href=https:"//jpbaraky.itch.io/unity3d-night-and-day-demo">JpBaraky/Unity3DDay-NightCycle (Itch.io)</a>
-</p>
-<h3>License</h3>
-<p>-Time music belong to Hans Zimmer all rights reserved
+<p>Made with Unity 2022.1.0a13 Scripts made with C#</p>
+<p>For the download of the project feel free to&nbsp;access:</p>
+<p>&nbsp;<a href="https://jpbaraky.itch.io/2d-unity-clothing-store-demo">JpBaraky/2DUnityClothingStoreDemo (Itch.io)</a>
 </p>
